@@ -8,8 +8,11 @@
 
 :root {
   --brand-color: #008080;
+  --brand-color-rgb: 0, 128, 128;
   --font-color: #333333;
+  --font-color-rgb: 51, 51, 51;
   --background-color: #ffffff;
+  --background-color-rgb: 255, 255, 255;
   --pc-page-side-padding: 4rem;
   --pc-section-top-padding: 6rem;
   --pc-section-bottom-padding: 2rem;
@@ -104,11 +107,11 @@ body {
       gap: 2rem;
 
       p:first-child {
-        background-color: var(--brand-color);
-        color: var(--background-color);
+        color: var(--brand-color);
         padding: 0.5rem 1.25rem;
         border-radius: 20px;
-        animation: cloud 2s infinite;
+        box-shadow: 0px 0px 10px rgba(var(--brand-color-rgb), 0.25);
+        animation: cloud 2s infinite forwards;
       }
       
       h1 {
@@ -129,6 +132,12 @@ body {
           border-radius: 30px;
           background-color: var(--brand-color);
           border: 1px solid var(--brand-color);
+          transition: all 0.3s ease;
+          
+          &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 0px 10px rgba(var(--brand-color-rgb), 0.5);
+          }
 
           &:first-child {
             color: var(--background-color);
@@ -137,6 +146,10 @@ body {
           &:last-child {
             background-color: var(--background-color);
             border: var(--border-size) solid var(--font-color);
+            
+            &:hover {
+              box-shadow: 0px 0px 10px rgba(var(--font-color-rgb), 0.5);
+            }
           }
         }
       }
@@ -154,10 +167,20 @@ body {
           height: 2.5rem;
           border-radius: 50%;
           border: var(--border-size) solid var(--font-color);
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 0px 10px rgba(var(--font-color-rgb), 0.5);
+          }
 
           &:nth-child(-n + 2) {
             border: var(--border-size) solid var(--brand-color);
             color: var(--brand-color);
+
+            &:hover {
+              box-shadow: 0px 0px 10px rgba(var(--brand-color-rgb), 0.5);
+            }
           }
         }
       }
@@ -173,5 +196,6 @@ body {
   50% {
     transform: translateY(-10px);
     transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(var(--brand-color-rgb), 0.5);
   }
 }
