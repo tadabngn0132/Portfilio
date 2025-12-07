@@ -14,7 +14,7 @@
   <!-- Header -->
   <header>
     <h1>Dat Dev</h1>
-    <nav>
+    <nav class="normal">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -24,6 +24,21 @@
         <li><a href="#projects">Projects</a></li>
       </ul>
     </nav>
+
+    <nav class="hamburger" id="hamburger">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+
+    <span class="bar" id="bar">
+      <i class="fa-solid fa-bars fa-xl"></i>
+    </span>
   </header>
 
   <!-- Hero section -->
@@ -50,39 +65,53 @@
 
   <!-- About section -->
   <section id="about">
-    <h3>About Me</h3>
-    <p>Work</p>
-    <p>Information Technology Student at the University of Greenwich Vietnam</p>
-
-    <p>Location</p>
-    <p>Ha Noi, Vietnam</p>
-
-    <p>Interests</p>
-    <p>Running and Listening audio</p>
-
-    <p>Languages</p>
-    <p>Vietnamese (Native), English (Basic)</p>
+    <h1>About Me</h1>
+    <div class="basic-info">
+      <div class="info-card">
+        <i class="fa-solid fa-briefcase fa-2xl"></i>
+        <h3>Work</h3>
+        <p>Information Technology Student at the University of Greenwich Vietnam</p>
+      </div>
+  
+      <div class="info-card">
+        <i class="fa-solid fa-location-dot fa-2xl"></i>
+        <h3>Location</h3>
+        <p>Ha Noi, Vietnam</p>
+      </div>
+  
+      <div class="info-card">
+        <i class="fa-solid fa-heart fa-2xl"></i>
+        <h3>Interests</h3>
+        <p>Running and Listening audio</p>
+      </div>
+  
+      <div class="info-card">
+        <i class="fa-solid fa-language fa-2xl"></i>
+        <h3>Languages</h3>
+        <p>Vietnamese (Native), English (Basic)</p>
+      </div>
+    </div>
   </section>
 
   <!-- Skills section -->
   <section id="skills">
     <!-- Technical Skills -->
-    <h3>Technical Skills</h3>
-    <h4>Programming Languages</h4>
+    <h1>Technical Skills</h1>
+    <h3>Programming Languages</h3>
     <ul>
       <li>JavaScript</li>
       <li>Java</li>
       <li>PHP</li>
       <li>C#</li>
     </ul>
-    <h4>Techniques</h4>
+    <h3>Techniques</h3>
     <ul>
       <li>HTML5</li>
       <li>CSS3</li>
       <li>RESTful APIs</li>
       <li>Node.js</li>
     </ul>
-    <h4>Frameworks and Libraries</h4>
+    <h3>Frameworks and Libraries</h3>
     <ul>
       <li>Vue.js</li>
       <li>ExpressJS</li>
@@ -91,14 +120,14 @@
       <li>React.js</li>
       <li>Tailwind CSS</li>
     </ul>
-    <h4>Databases</h4>
+    <h3>Databases</h3>
     <ul>
       <li>MySQL</li>
       <li>MongoDB</li>
       <li>SQL Server</li>
       <li>PostgreSQL</li>
     </ul>
-    <h4>Tools and Platforms</h4>
+    <h3>Tools and Platforms</h3>
     <ul>
       <li>Git and GitHub</li>
       <li>Visual Studio Code</li>
@@ -110,26 +139,26 @@
       <li>Canva</li>
     </ul>
     <!-- Soft Skills -->
-    <h3>Soft Skills</h3>
-    <h4>Communication</h4>
+    <h1>Soft Skills</h1>
+    <h3>Communication</h3>
     <ul>
       <li>Effective verbal and written communication</li>
       <li>Active listening</li>
       <li>Presentation skills</li>
     </ul>
-    <h4>Teamwork</h4>
+    <h3>Teamwork</h3>
     <ul>
       <li>Collaboration</li>
       <li>Conflict resolution</li>
       <li>Adaptability</li>
     </ul>
-    <h4>Problem-Solving</h4>
+    <h3>Problem-Solving</h3>
     <ul>
       <li>Analytical thinking</li>
       <li>Creativity</li>
       <li>Decision-making</li>
     </ul>
-    <h4>Time Management</h4>
+    <h3>Time Management</h3>
     <ul>
       <li>Prioritization</li>
       <li>Goal setting</li>
@@ -139,21 +168,21 @@
 
   <!-- Certifications section -->
   <section id="certifications">
-    <h3>Certifications</h3>
+    <h1>Certifications</h1>
     <div class="certification-card">
-      <h4>Top 3 Student of Summer 2023 Semester</h4>
+      <h3>Top 3 Student of Summer 2023 Semester</h3>
       <p>Certificate of Merit for the outstanding achievements</p>
       <p>Certified by Greenwich Vietnam on October 10th, 2023</p>
     </div>
 
     <div class="certification-card">
-      <h4>VSTEP</h4>
+      <h3>VSTEP</h3>
       <p>Certificate of Proficiency in English Level 4</p>
       <p>Certified by Thuongmai University in Hanoi, 05 April 2023</p>
     </div>
 
     <div class="certification-card">
-      <h4>The Best Student of GEH2284 Class - Part 2 Summer 2022 Semester</h4>
+      <h3>The Best Student of GEh1284 Class - Part 2 Summer 2022 Semester</h3>
       <p>Certificate of Merit for the outstanding achievements</p>
       <p>Certified by Greenwich Vietnam on Nov 9th, 2022</p>
     </div>
@@ -161,14 +190,14 @@
 
   <!-- Experience section -->
   <section id="experience">
-    <h3>Experience</h3>
+    <h1>Experience</h1>
     <div>
       <i class="fa-solid fa-box-archive"></i>
-      <h4>No experience yet</h4>
+      <h3>No experience yet</h3>
     </div>
 
     <!-- <div class="experience-card">
-      <h4>Intern Web Developer</h4>
+      <h3>Intern Web Developer</h3>
       <p>FPT Software Vietnam</p>
       <p>June 2024 - Present</p>
     </div> -->
@@ -176,9 +205,9 @@
 
   <!-- Education section -->
   <section id="education">
-    <h3>Education</h3>
+    <h1>Education</h1>
     <div class="education-card">
-      <h4>BSc (Hons) in Computing</h4>
+      <h3>BSc (Hons) in Computing</h3>
       <p>University of Greenwich (Vietnam)</p>
       <p>August 2022 - Current</p>
       <p>Total Mark: 75/100</p>
@@ -188,17 +217,17 @@
 
   <!-- Projects section -->
   <section id="projects">
-    <h3>Projects</h3>
+    <h1>Projects</h1>
     <div class="project-card">
-      <h4>GDC Website</h4>
+      <h3>GDC Website</h3>
       <p>A web application that both promotes the club's image and has an internal club management system.</p>
     </div>
     <div class="project-card">
-      <h4>Personal Portfolio Website</h4>
+      <h3>Personal Portfolio Website</h3>
       <p>A personal portfolio website to showcase my skills, projects, and experience as a web developer.</p>
     </div>
     <div class="project-card">
-      <h4>URL Shortener</h4>
+      <h3>URL Shortener</h3>
       <p>A web application that allows users to shorten long URLs into more manageable links using microservices architecture.</p>
     </div>
   </section>

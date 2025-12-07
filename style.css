@@ -17,7 +17,12 @@
   --pc-section-top-padding: 6rem;
   --pc-section-bottom-padding: 2rem;
   --pc-section-side-padding: 0rem;
+  --pc-section-title-padding: 0.5rem 1rem;
   --border-size: 1px;
+  --tablet-page-side-padding: 2rem;
+  --tablet-section-top-padding: 4rem;
+  --tablet-section-bottom-padding: 1rem;
+  --tablet-section-side-padding: 2rem;
 }
 
 * {
@@ -32,6 +37,9 @@ a {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   margin: 0;
   padding: 0;
   font-family: "Roboto Slab", serif;
@@ -53,7 +61,7 @@ body {
     z-index: 1000;
     
     nav {
-
+      
       ul {
         list-style-type: none;
         display: flex;
@@ -78,7 +86,16 @@ body {
           }
         }
       }
-    };
+
+      &.hamburger {
+        display: none;
+      }
+
+    }
+    
+    span {
+      display: none;
+    }
   }
 
   section {
@@ -90,12 +107,13 @@ body {
     align-items: center;
     justify-content: center;
     gap: 7rem;
-    height: 100vh;
+    margin-top: 1rem;
 
     img {
       width: 15rem;
       height: auto;
       border-radius: 20px;
+      animation: slide-left-in 1s forwards;
     }
 
     .overrall-info {
@@ -106,26 +124,35 @@ body {
       text-align: center;
       gap: 2rem;
 
-      p:first-child {
-        color: var(--brand-color);
-        padding: 0.5rem 1.25rem;
-        border-radius: 20px;
-        box-shadow: 0px 0px 10px rgba(var(--brand-color-rgb), 0.25);
-        animation: cloud 2s infinite forwards;
+      p {
+        animation: slide-top-down 1.3s forwards;
+
+        &:first-child {
+          color: var(--brand-color);
+          font-size: 14px;
+          font-weight: 600;
+          padding: 0.5rem 1.25rem;
+          border-radius: 20px;
+          box-shadow: 0px 0px 10px rgba(var(--brand-color-rgb), 0.25);
+          animation: cloud 2s infinite forwards;
+        }
       }
       
       h1 {
         text-transform: uppercase;
+        animation: slide-top-down 1s forwards;
         
         .highlight {
           color: var(--brand-color)
         }
       }
+
   
 
       .cta {
         display: flex;
         gap: 1.25rem;
+        animation: slide-top-down 1.6s forwards;
 
         a {
           padding: 0.75rem 1rem;
@@ -157,6 +184,7 @@ body {
       .social {
         display: flex;
         gap: 1.25rem;
+        animation: slide-top-down 2s forwards;
 
         a {
           display: flex;
@@ -186,6 +214,155 @@ body {
       }
     }
   }
+
+  #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      border-bottom: var(--border-size) solid var(--brand-color);
+      padding: var(--pc-section-title-padding);
+    }
+
+    .basic-info {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3.5rem;
+    }
+
+    .info-card {
+      background-color: var(--background-color);
+      border: var(--border-size) solid var(--font-color);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0px 0px 10px rgba(var(--font-color-rgb), 0.1);
+      border: var(--border-size) solid var(--brand-color);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0px 0px 10px rgba(var(--brand-color-rgb), 0.5);
+      }
+
+      i {
+        color: var(--brand-color);
+        margin-bottom: 2rem;
+      }
+
+      h3 {
+        color: var(--brand-color);
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  #skills {
+
+    h1 {
+      border-bottom: var(--border-size) solid var(--brand-color);
+      padding: var(--pc-section-title-padding);
+    }
+  }
+
+  #certifications {
+
+    h1 {
+      border-bottom: var(--border-size) solid var(--brand-color);
+      padding: var(--pc-section-title-padding);
+    }
+  }
+
+  #experience {
+
+    h1 {
+      border-bottom: var(--border-size) solid var(--brand-color);
+      padding: var(--pc-section-title-padding);
+    }
+  }
+
+  #education {
+
+    h1 {
+      border-bottom: var(--border-size) solid var(--brand-color);
+      padding: var(--pc-section-title-padding);
+    }
+  }
+
+  #projects {
+
+    h1 {
+      border-bottom: var(--border-size) solid var(--brand-color);
+      padding: var(--pc-section-title-padding);
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  body {
+
+    header {
+      padding: 0.5rem var(--tablet-page-side-padding);
+  
+      nav {
+  
+        display: flex;
+        background-color: var(--background-color);
+  
+        position: absolute;
+        top: 59px;
+        left: 0;
+        width: 100%;
+        
+        &.normal {
+          display: none;
+        }
+  
+        ul {
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+  
+          li {
+            width: 100%;
+  
+            a {
+              width: 100%;
+              text-align: start;
+              padding: 0.5rem var(--tablet-section-side-padding);
+            }
+          }
+        }
+      }
+  
+      .bar {
+        display: block;
+        cursor: pointer;
+      }
+    }
+  
+    section {
+      padding: var(--tablet-section-top-padding) var(--tablet-page-side-padding) var(--tablet-section-bottom-padding);
+    }
+  
+    #hero {
+      flex-direction: column;
+      height: auto;
+  
+      img {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
 }
 
 @keyframes cloud {
@@ -197,5 +374,53 @@ body {
     transform: translateY(-10px);
     transform: scale(1.1);
     box-shadow: 0px 0px 10px rgba(var(--brand-color-rgb), 0.5);
+  }
+}
+
+@keyframes slide-left-in {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-top-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-bottom-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
